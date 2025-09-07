@@ -43,6 +43,8 @@ function App() {
         <Route path="/accounts/Returns" element={<Return/>} />
         <Route path="accounts/address-book" element={<AddressBook/>} />
         <Route path="accounts/payment-option" element={<PaymentOption/>} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/product/:id" element={<ProductPage />} />
        
         
         
