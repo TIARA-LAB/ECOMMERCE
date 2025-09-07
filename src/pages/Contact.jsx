@@ -18,16 +18,16 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .send(
-        "service_wdz7y9i",
-        "template_e6nxzfh",
-        formData,
-        "yUuwXY-UNb7_cA338"
+      .sendForm(
+        "service_wdz7y9i",          
+        "template_e6nxzfh",       
+        e.target,              
+        "yUuwXY-UNb7_cA338"        
       )
       .then(
         () => {
           setPopup({ show: true, message: "✅ Message Sent Successfully!", type: "success" });
-          setFormData({ name: "", email: "", message: "" });
+          setFormData({ name: "", email: "", message: "" }); 
         },
         () => {
           setPopup({ show: true, message: "❌ Failed to send message. Try again.", type: "error" });
@@ -39,16 +39,16 @@ function Contact() {
     <div className="contact-page">
       <h1>Contact Us</h1>
 
-      
+    
       <div className="contact-top">
         <div className="contact-box">
           <h3>📞 Call to Us</h3>
-          <p>We are available 24/7 ,7 days a week</p>
+          <p>We are available 24/7, 7 days a week</p>
           <p>Phone: +8801611112222</p>
         </div>
       </div>
 
-      
+    
       <div className="contact-bottom">
         <div className="contact-box">
           <h3>✉️ Write to Us</h3>
@@ -62,7 +62,7 @@ function Contact() {
           <form onSubmit={handleSubmit} className="contact-form">
             <input
               type="text"
-              name="name"
+              name="name"             
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
@@ -70,14 +70,14 @@ function Contact() {
             />
             <input
               type="email"
-              name="email"
+              name="email"             
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
               required
             />
             <textarea
-              name="message"
+              name="message"          
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
@@ -88,7 +88,7 @@ function Contact() {
         </div>
       </div>
 
-      
+     
       {popup.show && (
         <div className="popup">
           <div className={`popup-content ${popup.type}`}>
