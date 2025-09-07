@@ -9,6 +9,7 @@ import CartPage from "./components/CartPage";
 import CheckoutPage from "./components/CheckoutPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 
 // Pages
 import Home from "./pages/Home";
@@ -17,7 +18,7 @@ import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
-import NotFound from "./pages/NotFound";
+
 
 // Accounts
 import Cancellations from "./accounts/Cancellations.jsx";
@@ -33,6 +34,7 @@ function App() {
         <Navbar />
 
         <Routes>
+          <Route path="*" element={<NotFound />} />
           
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -57,7 +59,7 @@ function App() {
           <Route path="/accounts/payment-option" element={<PaymentOption />} />
 
           
-          <Route path="*" element={<NotFound />} />
+          
         </Routes>
 
         <Footer />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import products from "../pages/Products";
 import { useCart } from "../context/CartContext";
 
-export default function WishList() {
+export default function ProductList() {
   const { addToCart } = useCart();
 
   return (
